@@ -5,4 +5,7 @@ CMS
 créer base
 Développer composants
 Développer back end
-Customiser CMS +++
+Customiser CMS
+
+test
+Vérification log
