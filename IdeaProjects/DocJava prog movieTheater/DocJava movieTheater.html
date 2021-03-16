@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation du programme salle de cinéma</title>
+    <link rel="stylesheet" href="CSS%20movieTheater.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<header>
+
+
+    <h1>Documentation du programme : salle2cinéma </h1>
+    <p>Date: 15/03/2021 <br>
+        Codeur référent : ClaraCoding</p>
+
+</header>
+<div class="page">
+
+    <div>
+        <nav>
+            <div><img class="back2futur" src="e65b4fb0-c19a-4bb0-bd17-eef362e4ea67.png"
+                 alt="Back_to_futur"></div>
+            <div class="menu">
+                <a href="#obj">Les objectifs du programme</a>
+            </div>
+            <div class="menu">
+                <a href="#conception">La conception</a>
+            </div>
+            <div class="menu">
+                <a href="#réa">Le code réalisé</a>
+            </div>
+            <div class="menu">
+                <a href="#res">Le résultat dans la console</a>
+            </div>
+            <div class="menu">
+                <a href="#impl">Fonctionnalités restant à implémenter </a>
+            </div>
+            <div class="menu">
+                <a href="#supp">Fonctionnalités supplémentaires à envisager </a>
+            </div>
+        </nav>
+    </div>
+
+    <div>
+        <main>
+            <h2 id="obj">Les objectifs du programme</h2>
+
+            <p>Pogramme de remplissage d'une salle de cinéma, qui permet de réserver des places et d'afficher la salle
+                au fur et à mesure des réservations. La description détaillée de l'attendu est disponible dans le
+                <a href="https://simplonline.co/briefs/4edba78e-ff70-4f77-a10b-1e00c206c406">brief</a> sur le site
+                Simplonline.
+            </p>
+
+            <h2 id="conception">La conception</h2>
+            <p>Le programme est réalisé en java. Il utilise des méthodes basiques facilement compréhensibles pour un
+                débutant. </p>
+
+            <h2 id="réa">Le code réalisé</h2>
+            <p> Le programme est en cours de développement. Nous présentons ci-dessous les fonctionnalités déjà
+                existantes. </p>
+
+
+            <section>
+                <div><h1>Paramétrage de la salle</h1>
+                    <article><p>L'objectif de ce code est de rendre les dimensions de la salle facilement
+                        paramétrables:</p>
+                    </article>
+                    <div class="box">// Dimension (paramétrables) <br>
+                        int totalNbRow = 20; <br>
+                        int totalNbSeatByRow = 25;
+                    </div>
+                </div>
+
+                <div><h1>Choix de la rangée</h1>
+                    <div>
+                        <article><p>La personne qui réserve peut choisir la rangée </p></article>
+                    </div>
+                    <div class="box">
+                        // Choice of row<br>
+                        int chosenRow = -1;<br>
+                        while (chosenRow < 1 || chosenRow > totalNbSeatByRow) {<br>
+                        System.out.println("\nChoississez votre rangée (1 à" + totalNbRow +"):");<br>
+                        chosenRow = sc.nextInt();<br>
+                        sc.nextLine();<br>
+                        if (chosenRow < 0 || chosenRow > totalNbRow) {<br>
+                        System.err.println("\nAttention, cette rangée n'existe pas!\n");<br>
+                        }<br>
+                        }<br>
+                    </div>
+                </div>
+
+                <div><h1>Choix du nombre de sièges</h1>
+                    <div>
+                        <article><p>La personne qui réserve peut choisir le nombre de siège </p></article>
+                    </div>
+                    <div class="box">
+                        // Choice of nb of seat<br>
+                        int seatNumber = -1;<br>
+                        while (seatNumber < 1 || seatNumber > 7) {<br>
+                        System.out.println("Nombre de sièges (1 à 10)");<br>
+                        seatNumber = sc.nextInt();<br>
+                        sc.nextLine();<br>
+                        if (seatNumber < 1 || seatNumber > 7) {<br>
+                        System.err.println("Attention, le nombre maximum de siège est 10");<br>
+                        }<br>
+                        }<br>
+                    </div>
+                </div>
+
+                <div><h1>Fonction d'affichage de la salle</h1>
+                    <div>
+                        <article><p>La personne qui réserve peut voir la salle avant validation </p></article>
+                    </div>
+                    <div class="box">
+                        public static void roomOverview (String[][] movieRoom) { <br>
+
+                        for (int row = 0; row < 5; row++) { <br>
+                        for (int seat = 0; seat < 7; seat++) { <br>
+                        System.out.printf("[%3s]", movieRoom[row][seat]); <br>
+                        } <br>
+                        System.out.println(); <br>
+                        } <br>
+                        } <br>
+                    </div>
+                </div>
+
+
+            </section>
+
+            <h2 id="res">Résultat dans la console</h2>
+            <div><img class="resultat" src="prJava.png"
+                      alt="copy_ecran_programme"></div>
+
+            <h2 id="impl">Fonctionnalités restant à implémenter</h2>
+            <li> Remplacer la valeur "null" par des cases vides.</li>
+            <li> La fonction de remplissage et les messages d'erreur associés.</li>
+            <li> La validation ou annulation de la réservation.</li>
+
+            <h2 id="supp">Fonctionnalités supplémentaires à envisager pour aller plus loin</h2>
+            <li>Boucle pour proposer une nouvelle réservation</li>
+            <li>Affichage spécifique des places réservées dans la salle (clignotant?)</li>
+            <li>Calcul du nombre de place disponible dans la salle</li>
+            <li>Impression des places réservées (billet)</li>
+
+
+    </div>
+</div>
+</body>
+
+<footer>
+    <img src="Capture%20d’écran%202021-03-15%20151231.png">
+    <p class="footer">A propos de <a href="https://fr.linkedin.com/in/clarabeuzart/fr-fr">ClaraCoding</a></p>
+    <p>Promo Simplon - Natixis 2021</p>
+</footer>
+</html>
